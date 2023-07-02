@@ -15,5 +15,5 @@
 
 ## making
 
-- [day1](./day001.md)
-- [day2](./day002.md)
+- [day1](docs/day001.md)
+- [day2](docs/day002.md)
