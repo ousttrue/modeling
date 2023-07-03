@@ -17,3 +17,4 @@
 
 - [day1](docs/day001.md)
 - [day2](docs/day002.md)
+- [day3](docs/day003.md)
