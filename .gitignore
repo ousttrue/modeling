@@ -1,3 +1,4 @@
 *.blend1
 *.cats.txt
 *.txt~
+__pycache__
