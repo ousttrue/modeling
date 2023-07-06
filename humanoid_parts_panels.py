@@ -1,4 +1,5 @@
 import bpy  # type: ignore
+from .humanoid_parts_search import HumanoidPartsSearch
 
 
 class HumanoidPartsAssemblePanel(bpy.types.Panel):
@@ -24,7 +25,7 @@ class HumanoidPartsAssemblePanel(bpy.types.Panel):
     def draw(self, context):
         armature = context.active_object.data
 
-        self.layout.prop(context.scene, "humanoid_parts_collection")
+        self.layout.operator(HumanoidPartsSearch.bl_idname)
 
         self.layout.label(text="Bones")
 

@@ -10,15 +10,17 @@ if "bpy" in locals():
 
     importlib.reload(humanoid_parts_properties)  # type: ignore
     importlib.reload(humanoid_parts_panels)  # type: ignore
+    importlib.reload(humanoid_parts_search)  # type:ignore
 
 import bpy  # type: ignore
 
 from .humanoid_parts_properties import HumanoidProperties
 from .humanoid_parts_panels import HumanoidPartsAssemblePanel
-
+from .humanoid_parts_search import HumanoidPartsSearch
 
 classes = [
     HumanoidProperties,
+    HumanoidPartsSearch,
     HumanoidPartsAssemblePanel,
 ]
 
@@ -29,9 +31,9 @@ def register():
     bpy.types.Armature.humanoid_parts = bpy.props.PointerProperty(
         type=HumanoidProperties
     )
-    bpy.types.Scene.humanoid_parts_collection = bpy.props.PointerProperty(
-        type=bpy.types.Collection
-    )
+    # bpy.types.Scene.humanoid_parts_collection = bpy.props.PointerProperty(
+    #     type=bpy.types.Collection
+    # )
 
 
 def unregister():
