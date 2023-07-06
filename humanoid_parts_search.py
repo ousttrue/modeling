@@ -40,3 +40,11 @@ class HumanoidPartsSearch(bpy.types.Operator):
                 setattr(armature.humanoid_parts, prop, o)
 
         return {"FINISHED"}
+
+
+def register():
+    bpy.utils.register_class(HumanoidPartsSearch)
+
+
+def unregister():
+    bpy.utils.unregister_class(HumanoidPartsSearch)

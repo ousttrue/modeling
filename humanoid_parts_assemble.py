@@ -100,3 +100,11 @@ class HumanoidPartsAssemble(bpy.types.Operator):
                 fit_parent_bone(context.active_object, o)
 
         return {"FINISHED"}
+
+
+def register():
+    bpy.utils.register_class(HumanoidPartsAssemble)
+
+
+def unregister():
+    bpy.utils.unregister_class(HumanoidPartsAssemble)

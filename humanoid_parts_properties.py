@@ -111,3 +111,15 @@ class HumanoidProperties(bpy.types.PropertyGroup):
     right_little_proximal: bpy.props.PointerProperty(type=bpy.types.Object)
     right_little_intermediate: bpy.props.PointerProperty(type=bpy.types.Object)
     right_little_distal: bpy.props.PointerProperty(type=bpy.types.Object)
+
+
+def register():
+    bpy.utils.register_class(HumanoidProperties)
+    bpy.types.Armature.humanoid_parts = bpy.props.PointerProperty(
+        type=HumanoidProperties
+    )
+
+
+def unregister():
+    bpy.utils.unregister_class(HumanoidProperties)
+

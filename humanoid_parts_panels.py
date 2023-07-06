@@ -1,10 +1,11 @@
 import bpy  # type: ignore
 from .humanoid_parts_search import HumanoidPartsSearch
 from .humanoid_parts_assemble import HumanoidPartsAssemble
+from .humanoid_parts_disassemble import HumanoidPartsDisassemble
 
 
 class HumanoidPartsAssemblePanel(bpy.types.Panel):
-    bl_idname = "OBJECT_PT_HumanoidPparts"
+    bl_idname = "OBJECT_PT_HumanoidPartsAssemble"
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
     bl_category = "HumanoidParts"
@@ -63,3 +64,12 @@ class HumanoidPartsAssemblePanel(bpy.types.Panel):
         self.draw_bone_lr(armature, "little_distal")
 
         self.layout.operator(HumanoidPartsAssemble.bl_idname)
+        self.layout.operator(HumanoidPartsDisassemble.bl_idname)
+
+
+def register():
+    bpy.utils.register_class(HumanoidPartsAssemblePanel)
+
+
+def unregister():
+    bpy.utils.unregister_class(HumanoidPartsAssemblePanel)

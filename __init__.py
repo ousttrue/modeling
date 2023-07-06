@@ -12,36 +12,33 @@ if "bpy" in locals():
     importlib.reload(humanoid_parts_panels)  # type: ignore
     importlib.reload(humanoid_parts_search)  # type:ignore
     importlib.reload(humanoid_parts_assemble)  # type:ignore
+    importlib.reload(humanoid_parts_disassemble)  # type:ignore
 
 import bpy  # type: ignore
 
-from .humanoid_parts_properties import HumanoidProperties
-from .humanoid_parts_search import HumanoidPartsSearch
-from .humanoid_parts_assemble import HumanoidPartsAssemble
-from .humanoid_parts_panels import HumanoidPartsAssemblePanel
+from . import humanoid_parts_properties
+from . import humanoid_parts_search
+from . import humanoid_parts_assemble
+from . import humanoid_parts_panels
+from . import humanoid_parts_disassemble
 
-classes = [
-    HumanoidProperties,
-    HumanoidPartsSearch,
-    HumanoidPartsAssemble,
-    HumanoidPartsAssemblePanel,
+modules = [
+    humanoid_parts_properties,
+    humanoid_parts_search,
+    humanoid_parts_assemble,
+    humanoid_parts_panels,
+    humanoid_parts_disassemble,
 ]
 
 
 def register():
-    for cls in classes:
-        bpy.utils.register_class(cls)
-    bpy.types.Armature.humanoid_parts = bpy.props.PointerProperty(
-        type=HumanoidProperties
-    )
-    # bpy.types.Scene.humanoid_parts_collection = bpy.props.PointerProperty(
-    #     type=bpy.types.Collection
-    # )
+    for m in modules:
+        m.register()
 
 
 def unregister():
-    for cls in classes:
-        bpy.utils.unregister_class(cls)
+    for m in modules:
+        m.unregister()
 
 
 if __name__ == "__main__":
