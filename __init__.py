@@ -11,16 +11,19 @@ if "bpy" in locals():
     importlib.reload(humanoid_parts_properties)  # type: ignore
     importlib.reload(humanoid_parts_panels)  # type: ignore
     importlib.reload(humanoid_parts_search)  # type:ignore
+    importlib.reload(humanoid_parts_assemble)  # type:ignore
 
 import bpy  # type: ignore
 
 from .humanoid_parts_properties import HumanoidProperties
-from .humanoid_parts_panels import HumanoidPartsAssemblePanel
 from .humanoid_parts_search import HumanoidPartsSearch
+from .humanoid_parts_assemble import HumanoidPartsAssemble
+from .humanoid_parts_panels import HumanoidPartsAssemblePanel
 
 classes = [
     HumanoidProperties,
     HumanoidPartsSearch,
+    HumanoidPartsAssemble,
     HumanoidPartsAssemblePanel,
 ]
 

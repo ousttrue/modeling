@@ -1,5 +1,6 @@
 import bpy  # type: ignore
 from .humanoid_parts_search import HumanoidPartsSearch
+from .humanoid_parts_assemble import HumanoidPartsAssemble
 
 
 class HumanoidPartsAssemblePanel(bpy.types.Panel):
@@ -60,3 +61,5 @@ class HumanoidPartsAssemblePanel(bpy.types.Panel):
         self.draw_bone_lr(armature, "little_proximal")
         self.draw_bone_lr(armature, "little_intermediate")
         self.draw_bone_lr(armature, "little_distal")
+
+        self.layout.operator(HumanoidPartsAssemble.bl_idname)
