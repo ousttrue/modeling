@@ -43,8 +43,10 @@ class HumanoidPartsSearch(bpy.types.Operator):
 
 
 def register():
+    print(__name__)
     bpy.utils.register_class(HumanoidPartsSearch)
 
 
 def unregister():
+    print(__name__)
     bpy.utils.unregister_class(HumanoidPartsSearch)

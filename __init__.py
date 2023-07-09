@@ -4,15 +4,25 @@ bl_info = {
     # "category": "Rigging",
 }
 
+import sys
 
 if "bpy" in locals():
     import importlib
 
-    importlib.reload(humanoid_parts_properties)  # type: ignore
-    importlib.reload(humanoid_parts_panels)  # type: ignore
-    importlib.reload(humanoid_parts_search)  # type:ignore
-    importlib.reload(humanoid_parts_assemble)  # type:ignore
-    importlib.reload(humanoid_parts_disassemble)  # type:ignore
+    # print(sys.modules.keys())
+
+    def reload(module_name: str):
+        module_name = f"{__name__}.{module_name}"
+        if module_name in sys.modules:
+            importlib.reload(sys.modules[module_name])
+        else:
+            print(f"no reload: {module_name}")
+
+    reload("humanoid_parts_properties")
+    reload("humanoid_parts_panels")
+    reload("humanoid_parts_search")
+    reload("humanoid_parts_assemble")
+    reload("humanoid_parts_disassemble")
 
 import bpy  # type: ignore
 

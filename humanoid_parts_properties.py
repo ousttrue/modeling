@@ -55,7 +55,7 @@ PROP_NAMES = [
 ]
 
 
-class HumanoidProperties(bpy.types.PropertyGroup):
+class HumanoidPartsProperties(bpy.types.PropertyGroup):
     hips: bpy.props.PointerProperty(type=bpy.types.Object)
     spine: bpy.props.PointerProperty(type=bpy.types.Object)
     chest: bpy.props.PointerProperty(type=bpy.types.Object)
@@ -114,12 +114,13 @@ class HumanoidProperties(bpy.types.PropertyGroup):
 
 
 def register():
-    bpy.utils.register_class(HumanoidProperties)
+    print(__name__)
+    bpy.utils.register_class(HumanoidPartsProperties)
     bpy.types.Armature.humanoid_parts = bpy.props.PointerProperty(
-        type=HumanoidProperties
+        type=HumanoidPartsProperties
     )
 
 
 def unregister():
-    bpy.utils.unregister_class(HumanoidProperties)
-
+    print(__name__)
+    bpy.utils.unregister_class(HumanoidPartsProperties)

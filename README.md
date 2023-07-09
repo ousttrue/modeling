@@ -15,7 +15,8 @@
 
 ## making
 
-- [day1](docs/day001.md)
-- [day2](docs/day002.md)
-- [day3](docs/day003.md)
-- [day4](docs/day004.md)
+- [部品化したモデリング](docs/day001.md)
+- [システム調整](docs/day002.md)
+- [VertexGroup による ChildBone の位置指定](docs/day003.md)
+- [モデリング開始](docs/day004.md)
+- [頭練習](docs/day005.md)

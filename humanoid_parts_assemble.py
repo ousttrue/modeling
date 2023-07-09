@@ -103,8 +103,10 @@ class HumanoidPartsAssemble(bpy.types.Operator):
 
 
 def register():
+    print(__name__)
     bpy.utils.register_class(HumanoidPartsAssemble)
 
 
 def unregister():
+    print(__name__)
     bpy.utils.unregister_class(HumanoidPartsAssemble)
